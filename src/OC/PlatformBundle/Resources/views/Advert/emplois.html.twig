@@ -1,0 +1,129 @@
+{% extends "OCPlatformBundle::layout.html.twig" %}
+
+{% block body %}
+ {% block stylesheets %}
+        {# On charge le CSS de bootstrap depuis le site directement #}
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link href='http://fonts.googleapis.com/css?family=Irish+Grover' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=La+Belle+Aurore' rel='stylesheet' type='text/css'>
+        <link href="{{ asset('css/screen.css') }}" type="text/css" rel="stylesheet" />
+        <link href="{{ asset('css/nav.css') }}" type="text/css" rel="stylesheet" />
+<link href="{{ asset('web/css/ajout.css') }}" type="text/css" rel="stylesheet" />
+ <link href="{{ asset('assets/css/Footer-with-logo.css') }}" type="text/css" rel="stylesheet" />
+
+
+    {% endblock %}
+<style>
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+</style>
+<div class="gallery">
+ 
+  <a target="_blank" href="{{ asset('bundles/bloggerblog/images/civil.png') }}">
+    <img src="{{ asset('bundles/bloggerblog/images/civil.png') }}" alt="Trolltunga Norway" width="300" height="200">
+  </a>
+  <div class="desc">Emploi de temps 1ere année génie civil</div> 
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="{{asset('bundles/bloggerblog/images/electrique.png') }}">
+    <img src="{{asset('bundles/bloggerblog/images/electrique.png') }}" alt="Forest" width="600" height="400">
+  </a>
+  <div class="desc">Emploi de temps 1ère année génie électrique </div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="{{asset('bundles/bloggerblog/images/info.png') }}">
+    <img src="{{asset('bundles/bloggerblog/images/info.png') }}" alt="Northern Lights" width="600" height="400">
+  </a>
+  <div class="desc">Emploi de temps 1ère année génie informatique</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="{{asset('bundles/bloggerblog/images/mecanique.png') }}">
+    <img src="{{asset('bundles/bloggerblog/images/mecanique.png') }}" alt="Mountains" width="600" height="400">
+  </a>
+  <div class="desc">Emploi de temps 1ere année génie mécanique</div>
+</div>
+<div class="gallery">
+  <a target="_blank" href="{{asset('bundles/bloggerblog/images/minds.png') }}">
+    <img src="{{asset('bundles/bloggerblog/images/minds.png') }}" alt="Mountains" width="600" height="400">
+  </a>
+  <div class="desc">Emploi de temps 1ere année Minds</div>
+</div>
+
+
+
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+<div class="gallery">
+ 
+  <a target="_blank" href="{{ asset('bundles/bloggerblog/images/civil1.png') }}">
+    <img src="{{ asset('bundles/bloggerblog/images/civil1.png') }}" alt="Trolltunga Norway" width="300" height="200">
+  </a>
+  <div class="desc">Emploi de temps 2eme année génie civil</div> 
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="{{asset('bundles/bloggerblog/images/electrique1.png') }}">
+    <img src="{{asset('bundles/bloggerblog/images/electrique1.png') }}" alt="Forest" width="600" height="400">
+  </a>
+  <div class="desc">Emploi de temps 2eme année génie électrique </div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="{{asset('bundles/bloggerblog/images/info1.png') }}">
+    <img src="{{asset('bundles/bloggerblog/images/info1.png') }}" alt="Northern Lights" width="600" height="400">
+  </a>
+  <div class="desc">Emploi de temps 2eme année génie informatique</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="{{asset('bundles/bloggerblog/images/mecanique1.png') }}">
+    <img src="{{asset('bundles/bloggerblog/images/mecanique1.png') }}" alt="Mountains" width="600" height="400">
+  </a>
+  <div class="desc">Emploi de temps 2eme année génie mécanique</div>
+</div>
+<div class="gallery">
+  <a target="_blank" href="{{asset('bundles/bloggerblog/images/minds1.png') }}">
+    <img src="{{asset('bundles/bloggerblog/images/minds1.png') }}" alt="Mountains" width="600" height="400">
+  </a>
+  <div class="desc">Emploi de temps 2eme année génie hydrolique</div>
+</div>
+<div class="gallery">
+  <a target="_blank" href="{{asset('bundles/bloggerblog/images/ghe1.png') }}">
+    <img src="{{asset('bundles/bloggerblog/images/ghe1.png') }}" alt="Mountains" width="600" height="400">
+  </a>
+  <div class="desc">Emploi de temps 2eme année génie éléctrique</div>
+</div>
+<div class="gallery">
+  <a target="_blank" href="{{asset('bundles/bloggerblog/images/ta1.png') }}">
+    <img src="{{asset('bundles/bloggerblog/images/ta1.png') }}" alt="Mountains" width="600" height="400">
+  </a>
+  <div class="desc">Emploi de temps 1ere année TA</div>
+</div>
+
+{% block javascripts %}
+    <script src="web/assets/ajout.js"></script>
+    
+{% endblock %}
+
+{% endblock %}

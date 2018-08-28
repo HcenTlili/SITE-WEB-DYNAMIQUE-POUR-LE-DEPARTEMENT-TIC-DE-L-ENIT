@@ -1,0 +1,58 @@
+{# src/OC/PlatformBundle/Resources/view/Advert/view.html.twig #}
+
+{% extends "OCPlatformBundle::layout.html.twig" %}
+
+{% block title %}
+    Lecture d'un article - {{ parent() }}
+{% endblock %}
+
+{% block ocplatform_body %}
+
+    <h1 style="font-family:fantasy; font-size: 35px" >{{ advert.title }}</h1>
+    <i>Par {{ advert.author }}, le {{ advert.date|date('d/m/Y') }}</i>
+
+    {% if advert.image is not null %}
+        <img
+
+                src="{{ asset('bundles/framework/'~'images' ~advert.image.uploadDir  ~ '/' ~ advert.image.url) }}"
+
+                alt="{{ 'bundles/framework/'~'images' ~advert.image.uploadDir  ~ '/' ~ advert.image.url}}"
+             style="width:500px; height: 300px"
+        />
+
+    {% endif %}
+
+    <div class="well">
+        {{ advert.content }}
+    </div>
+
+    {% for application in listApplications %}
+        <li style="border-style:solid ; border-width: 5px">
+            <p >
+                {{ application.content }}
+            </p>
+            <h1 style="color:red">rédigé par : {{ application.author }}</h1>
+
+        </li>
+    {% else %}
+        <li>Pas (encore !) d'articles</li>
+    {% endfor %}
+
+    {{ include("OCPlatformBundle:Advert:formComment.html.twig") }}
+
+    <p>
+        <a href="{{ path('oc_platform_home') }}" class="btn btn-default">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Retour à la liste
+        </a>
+        <a href="{{ path('oc_platform_edit', {'id': advert.id}) }}" class="btn btn-default">
+            <i class="glyphicon glyphicon-edit"></i>
+            Modifier l'article
+        </a>
+        <a href="{{ path('oc_platform_delete', {'id': advert.id}) }}" class="btn btn-danger">
+            <i class="glyphicon glyphicon-trash"></i>
+            Supprimer l'article
+        </a>
+    </p>
+
+{% endblock %}

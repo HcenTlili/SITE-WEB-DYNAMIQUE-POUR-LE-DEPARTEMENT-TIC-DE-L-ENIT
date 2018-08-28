@@ -1,0 +1,6 @@
+
+services:
+   my_type_form:
+      class: sf\MyTypeBundle\Form\MyType
+      tags:
+         -  { name: form.type }

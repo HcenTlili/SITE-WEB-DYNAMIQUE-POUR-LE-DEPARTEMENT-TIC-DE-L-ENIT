@@ -1,0 +1,49 @@
+{# src/OC/PlatformBundle/Resources/views/Advert/index.html.twig #}
+
+{% extends "OCPlatformBundle::layout.html.twig" %}
+
+{% block title %}
+    Accueil - {{ parent() }}
+{% endblock %}
+
+{% block ocplatform_body %}
+
+<div style="text-align:center">
+
+  <h1 style="font-family:fantasy; font-size: 40px; color:red">Liste des articles</h1>
+
+    <ul>
+        {% for advert in listAdverts %}
+          <br>
+    <h1 style="font-family:fantasy; font-size: 25px" >{{ advert.title }}</h1>
+        <i>Par {{ advert.author }}, le {{ advert.date|date('d/m/Y') }}</i></ul>  <br><br>
+
+    {% if advert.image is not null %}
+        <img
+
+                src="{{ asset('bundles/framework/'~'images' ~advert.image.uploadDir  ~ '/' ~ advert.image.url) }}"
+
+                alt="{{ 'bundles/framework/'~'images' ~advert.image.uploadDir  ~ '/' ~ advert.image.url}}"
+             style="width:500px; height: 300px"
+        />
+    
+      <br>
+    {% endif %}
+
+  
+        
+        
+        
+        
+        
+        
+        {% else %}
+            <li>Pas (encore !) d'articles</li>
+        {% endfor %}
+    </ul>
+
+
+
+</div>
+  
+{% endblock %}

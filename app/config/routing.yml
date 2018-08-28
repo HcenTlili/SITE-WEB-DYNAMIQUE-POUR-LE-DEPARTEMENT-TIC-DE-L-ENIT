@@ -1,0 +1,9 @@
+oc_platform:
+    resource: "@OCPlatformBundle/Resources/config/routing.yml"
+    prefix:   /platform
+oc_platform_formauth:
+    path:     /
+    defaults: { _controller: OCPlatformBundle:Advert:formauth }
+oc_platform_index:
+    path:     /affichage
+    defaults: { _controller: OCPlatformBundle:Advert:affichage }

@@ -1,0 +1,158 @@
+{# app/Resources/views/layout.html.twig #}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}OC Plateforme{% endblock %}</title>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    {% block stylesheets %}
+        {# On charge le CSS de bootstrap depuis le site directement #}
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link href='http://fonts.googleapis.com/css?family=Irish+Grover' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=La+Belle+Aurore' rel='stylesheet' type='text/css'>
+        <link href="{{ asset('css/screen.css') }}" type="text/css" rel="stylesheet" />
+        <link href="{{ asset('css/nav.css') }}" type="text/css" rel="stylesheet" />
+ <link href="{{ asset('assets/css/Footer-with-logo.css') }}" type="text/css" rel="stylesheet" />
+    {% endblock %}
+</head>
+
+<body>
+<div class="container">
+    <div class='w3-right w3-hide-small w3-wide toptext'   style=" font-family:'Segoe UI',Arial,sans-serif ">
+        <div id="top_header">
+
+            <div id="float_right">
+                <table >
+                    <tr>
+                        <span class="txt11 ">Vendredi 22 Decembre 2017 &nbsp &nbsp</span>
+                    </tr>
+                    <tr >
+                        <form  id="select_lang">
+                            <select name="langue" style="width:90px;" onchange="redirectionlangue(this.value,'&code=358');">
+                                <option value="fr" selected="selected">Français</option>
+                                <option value="ar" >عربي</option>
+                                <option value="en" >English</option>
+                            </select>
+                        </form>
+                    </tr>
+
+
+
+                </table>
+
+
+            </div>
+
+
+            <div id="div1" style="padding-bottom: 10px">
+                <img  id="back" src="{{ asset('bundles/bloggerblog/images/tunis.jpg') }}" alt="BloggerBlog" />
+                <p class="overflow_hidden height100_pourcent zoom padding_left10 txt10" style="padding-top: 5px">&nbsp République Tunisienne<br />
+                    <span class="txt10">&nbsp Ministère de l'Enseignement Supérieur et RS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      Ecole Nationale d'Ingenieurs de Tunis </span>
+                    <br />&nbsp Université de Manar
+                </p>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+    <nav style="padding-bottom: 20px">
+        <div id='cssmenu'>
+            <ul>
+                <li><a href="{{ path('oc_platform_acceuil') }}"><span>Notre Ecole</span></a></li>
+                <li class='active has-sub'><a href='#'><span>Les Départements</span></a>
+                    <ul>
+                        <li><a href="{{ path('oc_platform_tic') }}"><span>TIC</span></a>
+                           
+                        </li>
+                    
+                    </ul>
+                </li>
+                <li class='last'><a href="{{ path('oc_platform_indexblog') }}"><span>BLOG DE L ENIT</span></a></li>
+                <li class='last'><a href="{{ path('oc_platform_emplois') }}"><span>Emplois de temps</span></a></li>
+                <li class='last'><a href="{{ path('oc_platform_actualite') }}"><span>Actualités</span></a></li>
+                <li class='last'><a href="{{ path('oc_platform_index') }}"><span>Articles</span></a></li>
+                <li class='last'><a href='#'><span>Bibliotheques</span></a></li> 
+                <li class='last'><a href='#'><span>Documents</span></a></li>
+                <li class='last'><a href='#'><span>Vie Associative</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+
+            {% block body %}
+
+            {% endblock %}
+
+        </div>
+
+
+
+
+    </div>
+
+    <hr>
+
+     <footer id="myFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h5>Get started</h5>
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="#">Sign up</a></li>
+                        <li><a href="#">Downloads</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>About us</h5>
+                    <ul>
+                        <li><a href="#">Company Information</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Support</h5>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help desk</a></li>
+                        <li><a href="#">Forums</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3 info">
+                    <h5>Information</h5>
+                    <p> Ce projet a été réalisé dans le cours web. On a pour but d'améliorer la communication entre les différents intervenants dans le processus d'enseignement dans le département TIC. </p>
+                </div>
+            </div>
+        </div>
+        <div class="second-bar">
+           <div class="container">
+                <h2 class="logo"><a href="#">S H</a></h2>
+                <div class="social-icons">
+                    <a href="" class="twitter"><i class="fa fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/Ecole-Nationale-dIngénieurs-de-Tunis-1416758158590021/" class="facebook"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.enit.rnu.tn" class="google"><i class="fa fa-google-plus"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+{% block javascripts %}
+    {# Ajoutez ces lignes JavaScript si vous comptez vous servir des fonctionnalités du bootstrap Twitter #}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+{% endblock %}
+
+</body>
+</html>
